@@ -1,5 +1,4 @@
 ### Deploy Nginx demo application to ArgoCD
-
 ```sh
 # deploy nginx demo application to ArgoCD
 kubectl apply -f nginx-demo.yaml
