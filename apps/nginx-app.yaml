@@ -7,16 +7,13 @@ metadata:
     - argocd.argoproj.io/resources-finalizer
 spec:
   project: default
-
   source:
     repoURL: https://github.com/ahsan598/gitops-demo.git
     targetRevision: HEAD
     path: manifests
-
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
-
   syncPolicy:
     automated:
       prune: true
