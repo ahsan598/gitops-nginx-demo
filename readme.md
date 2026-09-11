@@ -9,11 +9,12 @@ kubectl create namespace dev
 kubectl apply -f apps/nginx-app.yaml
 
 # verify nginx demo application
-kubectl get applications -n argocd
+kubectl get application nginx-app -n argocd
 
 # 3. Verify deployed pods & service in dev namespace
-kubectl get pods -n dev
-kubectl get svc -n dev
+kubectl get deployment nginx-app -n dev
+kubectl get pods -n dev -l app=nginx-app
+kubectl get svc nginx-app -n dev
 ```
 ![nginx-app](/assets/nginx-pods.jpg)
 
