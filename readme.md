@@ -9,12 +9,14 @@ kubectl create namespace dev
 kubectl apply -f apps/nginx-app.yaml
 
 # verify nginx demo application
-kubectl get applications -n dev
+kubectl get applications -n argocd
 
-# 3. Verify Deployed Pods & Service in dev namespace
-kubectl get pods -n dev -l app=nginx-app
-kubectl get svc nginx-app -n dev
+# 3. Verify deployed pods & service in dev namespace
+kubectl get pods -n dev
+kubectl get svc -n dev
 ```
+![nginx-app](/assets/nginx-pods.jpg)
+
 ![argocd-deploy](/assets/argocd-deploy.jpg)
 
 **2. Test Local Application Access**
@@ -30,6 +32,6 @@ curl -I http://localhost:30080
 kubectl delete -f apps/nginx-app.yaml
 
 # Verify pods & service are terminated
-kubectl get pods -n dev -l app=nginx-app
-kubectl get svc nginx-app -n dev
+kubectl get pods -n dev
+kubectl get svc -n dev
 ```
